@@ -18,11 +18,14 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
         {
             new DeviceListColumns { Name = "tags.HubEnabledState", Alias = Strings.StatusHeader.ToUpperInvariant() },
             new DeviceListColumns { Name = "deviceId", Alias = Strings.DeviceIdHeader.ToUpperInvariant() },
-            new DeviceListColumns { Name = "reported.System.Manufacturer", Alias = Strings.ManufactureHeader.ToUpperInvariant() },
-            new DeviceListColumns { Name = "reported.System.FirmwareVersion", Alias = Strings.FirmwareHeader.ToUpperInvariant() },
+            //new DeviceListColumns { Name = "reported.System.Manufacturer", Alias = Strings.ManufactureHeader.ToUpperInvariant() },
+            new DeviceListColumns { Name = "reported.System.SoftwareVersion", Alias = Strings.SoftwareHeader.ToUpperInvariant() },
+            new DeviceListColumns { Name = "reported.System.Type", Alias = Strings.TypeHeader.ToUpperInvariant() },
+            //new DeviceListColumns { Name = "reported.System.FirmwareVersion", Alias = Strings.FirmwareHeader.ToUpperInvariant() },
             new DeviceListColumns { Name = "tags.Building", Alias = Strings.BuildingHeader.ToUpperInvariant() },
+            new DeviceListColumns { Name = "tags.Table", Alias = Strings.TableHeader.ToUpperInvariant() },
             new DeviceListColumns { Name = "reported.Config.TemperatureMeanValue", Alias = Strings.TemperatureHeader.ToUpperInvariant() },
-            new DeviceListColumns { Name = "reported.Method.UpdateFirmware.Status", Alias = Strings.FwStatusHeader.ToUpperInvariant() }
+            //new DeviceListColumns { Name = "reported.Method.UpdateFirmware.Status", Alias = Strings.FwStatusHeader.ToUpperInvariant() }
         };
 
         public DeviceListColumnsApiController(IUserSettingsLogic userSettingsLogic)

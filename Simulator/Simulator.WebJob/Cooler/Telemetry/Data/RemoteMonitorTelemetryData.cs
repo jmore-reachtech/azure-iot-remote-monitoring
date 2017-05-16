@@ -6,5 +6,6 @@
         public double Temperature { get; set; }
         public double Humidity { get; set; }
         public double? ExternalTemperature { get; set; }
+        public double Rpm { get; set; }
     }
 }

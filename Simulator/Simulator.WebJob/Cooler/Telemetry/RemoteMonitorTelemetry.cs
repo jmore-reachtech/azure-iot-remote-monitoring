@@ -19,6 +19,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
         private SampleDataGenerator _temperatureGenerator;
         private SampleDataGenerator _humidityGenerator;
         private SampleDataGenerator _externalTemperatureGenerator;
+        private SampleDataGenerator _rpmGenerator;
 
         public bool ActivateExternalTemperature { get; set; }
 
@@ -48,7 +49,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
 
         private void Reset()
         {
-            ActivateExternalTemperature = false;
+            ActivateExternalTemperature = true;
             TelemetryActive = true;
 
             int peakFrequencyInTicks = Convert.ToInt32(Math.Ceiling((double)PEAK_FREQUENCY_IN_SECONDS / REPORT_FREQUENCY_IN_SECONDS));
@@ -56,6 +57,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
             _temperatureGenerator = new SampleDataGenerator(33, 36, 42, peakFrequencyInTicks);
             _humidityGenerator = new SampleDataGenerator(20, 50);
             _externalTemperatureGenerator = new SampleDataGenerator(-20, 120);
+            _rpmGenerator = new SampleDataGenerator(100, 200);
 
             TelemetryIntervalInSeconds = REPORT_FREQUENCY_IN_SECONDS;
         }
@@ -71,8 +73,10 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
                     monitorData.DeviceId = _deviceId;
                     monitorData.Temperature = _temperatureGenerator.GetNextValue();
                     monitorData.Humidity = _humidityGenerator.GetNextValue();
+                    monitorData.Rpm = _rpmGenerator.GetNextValue();
                     messageBody = "Temperature: " + Math.Round(monitorData.Temperature, 2)
-                        + " Humidity: " + Math.Round(monitorData.Humidity, 2);
+                        + " Humidity: " + Math.Round(monitorData.Humidity, 2)
+                        + " RPM: " + Math.Round(monitorData.Rpm, 2);
 
                     if (ActivateExternalTemperature)
                     {

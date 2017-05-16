@@ -5,6 +5,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Models
     public class DeviceProperties
     {
         public string DeviceID { get; set; }
+        public string Type { get; set; }
         public bool? HubEnabledState { get; set; }
         public DateTime? CreatedTime { get; set; }
         public string DeviceState { get; set; }
@@ -12,6 +13,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Models
         public string Manufacturer { get; set; }
         public string ModelNumber { get; set; }
         public string SerialNumber { get; set; }
+        public string SoftwareVersion { get; set; }
         public string FirmwareVersion { get; set; }
         public string AvailablePowerSources { get; set; }
         public string PowerSourceVoltage { get; set; }

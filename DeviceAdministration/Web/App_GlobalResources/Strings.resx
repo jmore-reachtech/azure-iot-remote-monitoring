@@ -241,6 +241,14 @@
     <value>FIRMWARE VERSION</value>
     <comment>(Unused)</comment>
   </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+    <comment>(Unused)</comment>
+  </data>
+  <data name="SoftwareVersion" xml:space="preserve">
+    <value>SOFTWARE VERSION</value>
+    <comment>(Unused)</comment>
+  </data>
   <data name="LetMeDefineMyOwnDeviceId" xml:space="preserve">
     <value>Let me define my own Device ID</value>
     <comment>Radio button label.</comment>
@@ -581,6 +589,14 @@
     <value>Firmware</value>
     <comment>Table column header.</comment>
   </data>
+  <data name="SoftwareHeader" xml:space="preserve">
+    <value>Software</value>
+    <comment>Table column header.</comment>
+  </data>
+  <data name="TypeHeader" xml:space="preserve">
+    <value>Type</value>
+    <comment>Table column header.</comment>
+  </data>
   <data name="InstalledRamHeader" xml:space="preserve">
     <value>Installed RAM</value>
     <comment>Table column header.</comment>
@@ -794,6 +810,10 @@
   </data>
   <data name="FirmwareVersionMustBeLessThan200Characters" xml:space="preserve">
     <value>The Firmware Version must be less than 200 characters long.</value>
+    <comment>Error message.</comment>
+  </data>
+  <data name="SoftwareVersionMustBeLessThan200Characters" xml:space="preserve">
+    <value>The Software Version must be less than 200 characters long.</value>
     <comment>Error message.</comment>
   </data>
   <data name="InstalledRAMFieldMustBeLessThan200Characters" xml:space="preserve">
@@ -1066,6 +1086,10 @@
   </data>
   <data name="FilterOptionFirmwareVersion" xml:space="preserve">
     <value>Firmware Version</value>
+    <comment>Dropdown option.</comment>
+  </data>
+  <data name="FilterOptionSoftwareVersion" xml:space="preserve">
+    <value>Software Version</value>
     <comment>Dropdown option.</comment>
   </data>
   <data name="FilterOptionInstalledRam" xml:space="preserve">
@@ -2534,6 +2558,10 @@
   </data>
   <data name="BuildingHeader" xml:space="preserve">
     <value>Building</value>
+    <comment>Table column header.</comment>
+  </data>
+  <data name="TableHeader" xml:space="preserve">
+    <value>Table</value>
     <comment>Table column header.</comment>
   </data>
   <data name="PleaseNameYourFilter" xml:space="preserve">

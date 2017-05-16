@@ -2582,6 +2582,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Software Version.
+        /// </summary>
+        public static string FilterOptionSoftwareVersion {
+            get {
+                return ResourceManager.GetString("FilterOptionSoftwareVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string FilterOptionStatus {
@@ -3563,15 +3572,6 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MSISDN.
-        /// </summary>
-        public static string MSISDN {
-            get {
-                return ResourceManager.GetString("MSISDN", resourceCulture);
-            }
-        }
-		
-        /// <summary>
         ///   Looks up a localized string similar to Months.
         /// </summary>
         public static string MonthPlural {
@@ -3604,6 +3604,15 @@ namespace GlobalResources {
         public static string MoveUp {
             get {
                 return ResourceManager.GetString("MoveUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MSISDN.
+        /// </summary>
+        public static string MSISDN {
+            get {
+                return ResourceManager.GetString("MSISDN", resourceCulture);
             }
         }
         
@@ -3941,20 +3950,20 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Operator Code.
-        /// </summary>
-        public static string OperatorCode {
-            get {
-                return ResourceManager.GetString("OperatorCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to OPERATIONS.
         /// </summary>
         public static string OperationsHeader {
             get {
                 return ResourceManager.GetString("OperationsHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operator Code.
+        /// </summary>
+        public static string OperatorCode {
+            get {
+                return ResourceManager.GetString("OperatorCode", resourceCulture);
             }
         }
         
@@ -5255,6 +5264,33 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Software.
+        /// </summary>
+        public static string SoftwareHeader {
+            get {
+                return ResourceManager.GetString("SoftwareHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SOFTWARE VERSION.
+        /// </summary>
+        public static string SoftwareVersion {
+            get {
+                return ResourceManager.GetString("SoftwareVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Software Version must be less than 200 characters long..
+        /// </summary>
+        public static string SoftwareVersionMustBeLessThan200Characters {
+            get {
+                return ResourceManager.GetString("SoftwareVersionMustBeLessThan200Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} devices inapplicable.
         /// </summary>
         public static string SomeDeviceInapplicable {
@@ -5377,6 +5413,15 @@ namespace GlobalResources {
         public static string TableDataSaveConflictErrorMessage {
             get {
                 return ResourceManager.GetString("TableDataSaveConflictErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Table.
+        /// </summary>
+        public static string TableHeader {
+            get {
+                return ResourceManager.GetString("TableHeader", resourceCulture);
             }
         }
         
@@ -5516,6 +5561,24 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string TypeHeader {
+            get {
+                return ResourceManager.GetString("TypeHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type of search.
         /// </summary>
         public static string TypeOfSearch {
@@ -5640,7 +5703,7 @@ namespace GlobalResources {
                 return ResourceManager.GetString("UpdateTwin", resourceCulture);
             }
         }
-		
+        
         /// <summary>
         ///   Looks up a localized string similar to Upload.
         /// </summary>

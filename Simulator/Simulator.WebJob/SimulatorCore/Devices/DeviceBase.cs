@@ -30,6 +30,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
         public const string DeviceStatePropertyName = "Device.DeviceState";
         public const string StartupTimePropertyName = "Device.StartupTime";
         public const string FirmwareVersionPropertyName = "System.FirmwareVersion";
+        public const string SoftwareVersionPropertyName = "System.SoftwareVersion";
         public const string ConfigurationVersionPropertyName = "System.ConfigurationVersion";
         public const string TemperatureMeanValuePropertyName = "Config.TemperatureMeanValue";
         public const string TelemetryIntervalPropertyName = "Config.TelemetryInterval";
@@ -81,6 +82,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
             { "ModelNumber", "System.ModelNumber" },
             { "SerialNumber", "System.SerialNumber" },
             { "FirmwareVersion", FirmwareVersionPropertyName },
+            { "SoftwareVersion", SoftwareVersionPropertyName },
+            { "Type",  "System.Type"},
             { "AvailablePowerSources", "System.AvailablePowerSources" },
             { "PowerSourceVoltage", "System.PowerSourceVoltage" },
             { "BatteryLevel", "System.BatteryLevel" },

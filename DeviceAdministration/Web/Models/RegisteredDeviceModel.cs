@@ -11,6 +11,9 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
 
         public string SecondaryKey { get; set; }
 
+        [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "TypeMustBeLessThan100Characters")]
+        public string Type { get; set; }
+
         [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "ObjectNameMustBeLessThan200Characters")]
         public string ObjectName { get; set; }
 
@@ -25,8 +28,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
         [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "SerialNumberMustBeLessThan200Characters")]
         public string SerialNumber { get; set; }
 
-        [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "FirmwareVersionMustBeLessThan200Characters")]
-        public string FirmwareVersion { get; set; }
+        [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "SoftwareVersionMustBeLessThan200Characters")]
+        public string SoftwareVersion { get; set; }
 
         [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "PlatformNameMustBeLessThan200Characters")]
         public string Platform { get; set; }

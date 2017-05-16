@@ -117,6 +117,15 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
             "2F",
         };
 
+        private static List<string> _possibleTableTags = new List<string>
+        {
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "Table 5",
+            "Table 5"
+        };
+
         public static DeviceModel GetSampleSimulatedDevice(string deviceId, string key)
         {
             DeviceModel device = DeviceCreatorHelper.BuildDeviceStructure(deviceId, true, null);
@@ -174,6 +183,9 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
                 device.DeviceProperties.FirmwareVersion = "2.0";
             }
 
+            device.DeviceProperties.SoftwareVersion = "SW" + randomId;
+            device.DeviceProperties.Type = "TYPE" + randomId;
+
             device.DeviceProperties.Platform = "Plat-" + randomId;
             device.DeviceProperties.Processor = "i3-" + randomId;
             device.DeviceProperties.InstalledRAM = randomId + " MB";
@@ -187,6 +199,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
         {
             device.Telemetry.Add(new Telemetry("Temperature", "Temperature", "double"));
             device.Telemetry.Add(new Telemetry("Humidity", "Humidity", "double"));
+            device.Telemetry.Add(new Telemetry("RPM", "RPM", "double"));
         }
 
         private static void AssignCommands(DeviceModel device)
@@ -260,6 +273,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
 
             device.Twin.Tags["Building"] = Random(_possibleBuildingTags);
             device.Twin.Tags["Floor"] = Random(_possibleFloorTags);
+            device.Twin.Tags["Table"] = Random(_possibleTableTags);
         }
 
         public static void AssignDefaultDesiredProperties(DeviceModel device)
