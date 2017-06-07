@@ -513,6 +513,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\styles\elements\forms.less" />
+    <None Include="Properties\PublishProfiles\Web20170531123507 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -705,9 +706,9 @@
     <Content Include="Views\DeviceRules\_DeviceRuleProperties.cshtml" />
     <Content Include="Views\DeviceRules\EditDeviceRuleProperties.cshtml" />
     <Content Include="Views\DeviceRules\AllRulesAssigned.cshtml" />
-    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\Indexold.cshtml" />
     <Content Include="Views\Dashboard\_TelemetryHistory.cshtml" />
-    <Content Include="Views\Dashboard\_DashboardDevicePane.cshtml" />
+    <Content Include="Views\Dashboard\_DashboardDevicePaneold.cshtml" />
     <Content Include="Views\Dashboard\_TelemetryHistorySummary.cshtml" />
     <Content Include="Views\Dashboard\_AlertHistory.cshtml" />
     <Content Include="Views\DeviceRules\RemoveDeviceRule.cshtml" />
@@ -742,6 +743,8 @@
     <Content Include="Views\Device\EditIcon.cshtml" />
     <Content Include="Views\Job\_JobResult.cshtml" />
     <Content Include="Views\Job\ScheduleIconUpdate.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Dashboard\_DashboardDevicePane.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

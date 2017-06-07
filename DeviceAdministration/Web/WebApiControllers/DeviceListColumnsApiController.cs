@@ -24,7 +24,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
             //new DeviceListColumns { Name = "reported.System.FirmwareVersion", Alias = Strings.FirmwareHeader.ToUpperInvariant() },
             new DeviceListColumns { Name = "tags.Building", Alias = Strings.BuildingHeader.ToUpperInvariant() },
             new DeviceListColumns { Name = "tags.Table", Alias = Strings.TableHeader.ToUpperInvariant() },
-            new DeviceListColumns { Name = "reported.Config.TemperatureMeanValue", Alias = Strings.TemperatureHeader.ToUpperInvariant() },
+            new DeviceListColumns { Name = "reported.System.Payload", Alias = Strings.PayloadHeader.ToUpperInvariant() },
+            //new DeviceListColumns { Name = "reported.Config.TemperatureMeanValue", Alias = Strings.TemperatureHeader.ToUpperInvariant() },
             //new DeviceListColumns { Name = "reported.Method.UpdateFirmware.Status", Alias = Strings.FwStatusHeader.ToUpperInvariant() }
         };
 

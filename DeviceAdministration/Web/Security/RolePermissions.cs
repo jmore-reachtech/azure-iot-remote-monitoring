@@ -88,24 +88,31 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
                 ADMIN_ROLE_NAME);
             
             AssignRolesToPermission(Permission.AssignAction,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.DisableEnableDevices,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.EditDeviceMetadata,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.AddDevices,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.RemoveDevices,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.SendCommandToDevices,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.ViewDeviceSecurityKeys,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.ViewRules,
@@ -118,18 +125,23 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.EditRules,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.DeleteRules,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.HealthBeat,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.LogicApps,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.CellularConn,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.ViewJobs,
@@ -137,13 +149,17 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
                 READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
+
             AssignRolesToPermission(Permission.ManageJobs,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.SaveDeviceListColumnsAsGlobal,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
 
             AssignRolesToPermission(Permission.DeleteSuggestedClauses,
+                READ_ONLY_ROLE_NAME,
                 ADMIN_ROLE_NAME);
         }
 

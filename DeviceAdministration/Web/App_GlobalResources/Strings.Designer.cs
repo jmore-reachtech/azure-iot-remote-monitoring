@@ -4022,6 +4022,24 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PAYLOAD.
+        /// </summary>
+        public static string Payload {
+            get {
+                return ResourceManager.GetString("Payload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payload.
+        /// </summary>
+        public static string PayloadHeader {
+            get {
+                return ResourceManager.GetString("PayloadHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PDPContext Profile Name.
         /// </summary>
         public static string PDPContextProfileName {

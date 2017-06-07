@@ -185,6 +185,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Common.Factory
 
             device.DeviceProperties.SoftwareVersion = "SW" + randomId;
             device.DeviceProperties.Type = "TYPE" + randomId;
+            device.DeviceProperties.Payload = "{ shfcnt: 300}";
 
             device.DeviceProperties.Platform = "Plat-" + randomId;
             device.DeviceProperties.Processor = "i3-" + randomId;

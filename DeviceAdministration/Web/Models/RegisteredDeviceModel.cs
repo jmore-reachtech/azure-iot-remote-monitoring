@@ -31,6 +31,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
         [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "SoftwareVersionMustBeLessThan200Characters")]
         public string SoftwareVersion { get; set; }
 
+        public string Payload { get;}
+
         [StringLength(MaxLength, ErrorMessageResourceType = typeof(Strings), ErrorMessageResourceName = "PlatformNameMustBeLessThan200Characters")]
         public string Platform { get; set; }
 

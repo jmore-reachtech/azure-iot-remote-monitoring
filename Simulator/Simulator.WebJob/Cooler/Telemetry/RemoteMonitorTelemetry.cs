@@ -74,14 +74,16 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.Simulator.WebJob
                     monitorData.Temperature = _temperatureGenerator.GetNextValue();
                     monitorData.Humidity = _humidityGenerator.GetNextValue();
                     monitorData.Rpm = _rpmGenerator.GetNextValue();
+                    monitorData.Payload = "'{ shfcnt:" + _rpmGenerator.GetNextValue().ToString() + "}'";
                     messageBody = "Temperature: " + Math.Round(monitorData.Temperature, 2)
                         + " Humidity: " + Math.Round(monitorData.Humidity, 2)
-                        + " RPM: " + Math.Round(monitorData.Rpm, 2);
+                        + " RPM: " + Math.Round(monitorData.Rpm, 2) 
+                        + " Payload: " + monitorData.Payload;
 
                     if (ActivateExternalTemperature)
                     {
                         monitorData.ExternalTemperature = _externalTemperatureGenerator.GetNextValue();
-                        messageBody += " External Temperature: " + Math.Round((double)monitorData.ExternalTemperature, 2);
+                        messageBody +=  " External Temperature: " + Math.Round((double)monitorData.ExternalTemperature, 2);
                     }
                     else
                     {

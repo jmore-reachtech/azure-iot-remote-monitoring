@@ -7,5 +7,6 @@
         public double Humidity { get; set; }
         public double? ExternalTemperature { get; set; }
         public double Rpm { get; set; }
+        public string Payload { get; set; }
     }
 }
