@@ -175,6 +175,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                     IEnumerable<StrDict> strdicts = ParsingHelper.ParseCsv(reader).ToDictionaries();
                     DeviceTelemetryModel model;
                     string str;
+                    int count = 0;
                     foreach (StrDict strdict in strdicts)
                     {
                         model = new DeviceTelemetryModel();
@@ -211,7 +212,7 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                                 .Select((name) => new DeviceTelemetryFieldModel
                                 {
                                     Name = name,
-                                    Type = "double"
+                                    Type = "string"
                                 });
                         }
 
@@ -219,7 +220,9 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                         {
                             if (strdict.TryGetValue(field.Name, out str))
                             {
-                                switch (field.Type.ToUpperInvariant())
+                               
+                               model.Values.Add(field.Name, str);
+                                /*switch (field.Type.ToUpperInvariant())
                                 {
                                     case "INT":
                                     case "INT16":
@@ -257,12 +260,18 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
                                         break;
                                 }
                             }
-                        }
+                        }*/
 
-                        models.Add(model);
+                                models.Add(model);
+                            }
+                        }
+                        count += 1;
+                        if (count > 9)
+                            break;
                     }
                 }
             }
+
             finally
             {
             }

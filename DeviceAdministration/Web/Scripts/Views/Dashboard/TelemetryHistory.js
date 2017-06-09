@@ -13,7 +13,10 @@
         var visual;
         var width;
         var hasVisualBeenInitialized = false;
-        
+
+        var targetPayload;
+        var innertHTML;
+
         var createDataView = function createDataView(data) {
             
             var categoryIdentities;
@@ -32,7 +35,7 @@
             fieldExpr =
                 powerbi.data.SQExprBuilder.fieldDef({
                     entity: 'table1',
-                    column: 'time'
+                    column: 'time',
                 });
             
             graphData = produceGraphData(data);
@@ -48,7 +51,31 @@
                                 powerbi.data.SQExprBuilder.text(value));
                         return powerbi.data.createDataViewScopeIdentity(expr);
                     });
-                    
+
+            innertHTML = "<table>";
+            var count = 0;
+            for (var i = data.length-1; i > -1; i--)
+            {
+                if (count > 9)
+                    break;
+                innertHTML += "<tr><td>";
+                var item = data[i];
+                var dateTime = new Date(item.timestamp);
+                if (!dateTime.replace) {
+                    dateTime.replace = ('' + this).replace;
+                }
+
+                for (var field in item.values) {
+                    innertHTML += "<b>" + (count + 1).toString() + ".  " + dateTime + "</b><br><b>Payload:</b><br>" + item.values[field] + "</td></tr>";
+                    if (count < 9)
+                        innertHTML += "<tr><td><hr></td></tr>";
+                    //alert(dateTime + " " + item.values[field]);
+                }
+
+                count += 1;
+            }
+
+            innertHTML += "</table>";
             var graphMetadataColumns = [
                 {
                     displayName: 'Time',
@@ -62,13 +89,14 @@
 
             // Create a new column for values
             if (Array.isArray(telemetryFields) && telemetryFields.length > 0) {
+               
                 for (var i = 0; i < telemetryFields.length; i++) {
                     graphMetadataColumns.push({
                         displayName: telemetryFields[i].displayName || convertToDisplayName(telemetryFields[i].name),
                         isMeasure: true,
                         format: "0.0",
                         queryName: telemetryFields[i].name.toLowerCase(),
-                        type: powerbi.ValueType.fromDescriptor({ numeric: true })
+                        type: powerbi.ValueType.fromDescriptor({ string: true })
                     });
 
                     columns.push({
@@ -83,7 +111,7 @@
                         isMeasure: true,
                         format: "0.0",
                         queryName: field.toLowerCase(),
-                        type: powerbi.ValueType.fromDescriptor({ numeric: true })
+                        type: powerbi.ValueType.fromDescriptor({ string: true })
                     });
                     columns.push({
                         source: graphMetadataColumns[graphMetadataColumns.length - 1],
@@ -97,7 +125,6 @@
             };
             
             dataValues = dataViewTransform.createValueColumns(columns);
-            
             categoryMetadata = {
                 categories: [{
                     source: graphMetadata.columns[0],
@@ -154,7 +181,7 @@
             width = $(targetControl).width();
             
             // Get a plugin
-            visual = pluginService.getPlugin('lineChart').create();
+            /*visual = pluginService.getPlugin('lineChart').create();
             
             visual.init({
                 // empty DOM element the visual should attach to.
@@ -169,8 +196,10 @@
                 settings: { slicingEnabled: true },
                 interactivity: { isInteractiveLegend: false, selection: false },
                 animation: { transitionImmediate: true }
-            });
-            
+            });*/
+
+            targetPayload.innerHTML = innertHTML;
+            //alert(innertHTML);
             hasVisualBeenInitialized = true;
         };
         
@@ -185,7 +214,9 @@
                 telemetryHistorySettings.targetControlSubtitle;
             
             targetControlTitle = telemetryHistorySettings.targetControlTitle;
-            
+
+            targetPayload = telemetryHistorySettings.targetPayload;
+
             createVisual();
         };
         
@@ -235,14 +266,17 @@
             width = $(targetControl).width();
             
             if (lastData && hasVisualBeenInitialized) {
-                visual.update({
+                createDataView(lastData);
+                targetPayload.innerHTML = innertHTML;
+                //alert(innertHTML);
+                /*visual.update({
                     dataViews: [createDataView(lastData)],
                     viewport: {
                         height: height,
                         width: width
                     },
                     duration: 0
-                });
+                });*/
             }
         };
         

@@ -5489,7 +5489,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Telemetry History.
+        ///   Looks up a localized string similar to Payload History.
         /// </summary>
         public static string TelemetryHistory {
             get {

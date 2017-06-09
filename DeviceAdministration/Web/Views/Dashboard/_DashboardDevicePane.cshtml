@@ -1,11 +1,9 @@
 ﻿@using GlobalResources
 @using System.Collections.Generic
-
 @model IList<KeyValuePair<string, string>>
 @{
     string firstDeviceId = string.Empty;
 }
-
 <div class="dashboard_right_column">
     <div class="dashboard_device_selection">
         <form class="dashboard_device_selection__selection_form" id="selectDevice">
@@ -20,7 +18,6 @@
                     <option value="@Html.Encode(pair.Key)">@Html.Encode(pair.Value)</option>
                 }
             </select>
-
         </form>
     </div>
     <div class="telemetryhistory">
@@ -28,9 +25,9 @@
             Html.RenderPartial("_TelemetryHistory");
             //Html.RenderPartial("_TelemetryHistorySummary");
         }
-        <div id="loadingElement" class="loader_container loader_container_details">
+        <!--<div id="loadingElement" class="loader_container loader_container_details">
             <div class="loader_container__loader"></div>
-        </div>
+        </div>-->
     </div>
 </div>
 <script type="text/javascript" src="~/Scripts/Views/Dashboard/DashboardDevicePane.js?ver=@Constants.JSVersion"></script>
@@ -40,10 +37,10 @@
 
         var dashboardDevicePaneSettings = {
             loadDataUrlBase: '/api/v1/telemetry/dashboardDevicePane?deviceId=',
-            refreshMilliseconds: 3000,
+            refreshMilliseconds: 10000,
             selectionDropDown: $('#deviceSelection'),
             telemetryGridRefreshData: IoTApp.Dashboard.TelemetryHistory.updateTelemetryHistoryGridData,
-            telemetryHistoryRefreshData: IoTApp.Dashboard.TelemetryHistorySummary.updateTelemetryHistorySummaryData
+            //telemetryHistoryRefreshData: IoTApp.Dashboard.TelemetryHistorySummary.updateTelemetryHistorySummaryData
         };
 
         IoTApp.Dashboard.DashboardDevicePane.init(dashboardDevicePaneSettings);

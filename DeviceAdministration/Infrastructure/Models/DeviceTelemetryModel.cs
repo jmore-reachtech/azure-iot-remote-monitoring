@@ -22,8 +22,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Infr
         /// <summary>
         /// Values for telemetry data associated with individual fields
         /// </summary>
-        private IDictionary<string, double> values = new Dictionary<string, double>();
-        public IDictionary<string, double> Values
+        private IDictionary<string, string> values = new Dictionary<string, string>();
+        public IDictionary<string, string> Values
         {
             get { return values; }
             set { values = value; }

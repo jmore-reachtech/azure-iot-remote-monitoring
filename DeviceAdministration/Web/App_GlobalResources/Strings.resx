@@ -1285,7 +1285,7 @@
     <comment>Guge format string.</comment>
   </data>
   <data name="TelemetryHistory" xml:space="preserve">
-    <value>Telemetry History</value>
+    <value>Payload History</value>
     <comment>Chart heading.</comment>
   </data>
   <data name="Temperature" xml:space="preserve">

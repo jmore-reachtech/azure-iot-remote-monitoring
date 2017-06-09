@@ -1,7 +1,7 @@
 ﻿@using GlobalResources
 <div id="telemetryHistory" class="dashboard_telemetry_history">
     <h2 class="dashboard_telemetry_history__telemetry_history_title" id="telemetryHistoryTitle">@Strings.TelemetryHistory</h2>
-    <div id="telemetryHistoryGraph" class="dashboard_telemetry_history__telemetry_history_graph"></div>
+    <div id="telemetryHistoryGraph" class="dashboard_telemetry_history__telemetry_history_graph" style="overflow-y: scroll; overflow-x: hidden"></div>
 </div>
 <script src="~/Scripts/Views/Dashboard/TelemetryHistory.js?ver=@Constants.JSVersion"></script>
 <script type="text/javascript">
@@ -10,9 +10,10 @@
 
         var telemetryHistorySettings = {
             targetControl: $('#telemetryHistoryGraph'),
+            targetPayload: document.getElementById("telemetryHistoryGraph"),
             targetControlContainer: $('#telemetryHistory'),
             targetControlSubtitle: $('#telemetryHistorySubtitle'),
-            targetControlTitle: $('#telemetryHistoryTitle')
+            targetControlTitle: $('#telemetryHistoryTitle'),
         };
 
         IoTApp.Dashboard.TelemetryHistory.init(telemetryHistorySettings);

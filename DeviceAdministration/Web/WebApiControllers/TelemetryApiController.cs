@@ -25,7 +25,8 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
     [RoutePrefix("api/v1/telemetry")]
     public class TelemetryApiController : WebApiControllerBase
     {
-        private const double MAX_DEVICE_SUMMARY_AGE_MINUTES = 10.0;
+        //private const double MAX_DEVICE_SUMMARY_AGE_MINUTES = 10.0;
+        private const double MAX_DEVICE_SUMMARY_AGE_MINUTES = 720.0; // 12 hours
         private const int DISPLAYED_HISTORY_ITEMS = 18;
         private const int MAX_DEVICES_TO_DISPLAY_ON_DASHBOARD = 200;
 
