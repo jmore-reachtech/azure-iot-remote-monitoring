@@ -37,6 +37,7 @@
 
         var htmlEncode = function (data) {
             // "trick" to HTML encode data from JS--essentially dip it in a <div> and pull it out again
+            alert(data);
             return data ? $('<div/>').text(data).html() : null;
         }
 

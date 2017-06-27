@@ -486,7 +486,7 @@
     <comment>(Unused)</comment>
   </data>
   <data name="MicrosoftAzureIoTSuite" xml:space="preserve">
-    <value>Microsoft Azure IoT Suite</value>
+    <value>Scientific Games</value>
     <comment>Section heading.</comment>
   </data>
   <data name="SignIn" xml:space="preserve">
@@ -1320,7 +1320,7 @@
     <comment>(Unused)</comment>
   </data>
   <data name="DefaultSolutionName" xml:space="preserve">
-    <value>Remote Monitoring Solution</value>
+    <value>Wireless Network</value>
     <comment>Section heading.</comment>
   </data>
   <data name="EditDeviceRuleFormatted" xml:space="preserve">
@@ -2703,5 +2703,9 @@
   <data name="PayloadHeader" xml:space="preserve">
     <value>Payload</value>
     <comment>Table Column header.</comment>
+  </data>
+  <data name="AddBulkDevice" xml:space="preserve">
+    <value>Bulk Add Devices</value>
+    <comment>Button label.</comment>
   </data>
 </root>

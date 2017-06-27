@@ -1,0 +1,25 @@
+﻿@using GlobalResources
+@using Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.Helpers
+@{
+    ViewBag.Title = "Devices Created";
+}
+
+<header class="header_main">
+
+    <h1 class="header_main__head">Bulk Devices Created</h1>
+</header>
+<div class="content_outer">
+    <div class="content_inner">
+        <div id="content">
+                @model List<String>
+                <h2>@Model.Count() Devices were created!</h2>
+                
+
+                @foreach (var item in Model)
+                {
+                    <div>@item</div>
+                }
+
+</div>
+    </div>
+</div>

@@ -5,6 +5,9 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web;
+using System.IO;
+using System.Text;
 using DeviceManagement.Infrustructure.Connectivity.Exceptions;
 using DeviceManagement.Infrustructure.Connectivity.Models.TerminalDevice;
 using GlobalResources;
@@ -79,6 +82,63 @@ namespace Microsoft.Azure.Devices.Applications.RemoteMonitoring.DeviceAdmin.Web.
             var deviceTypes = await _deviceTypeLogic.GetAllDeviceTypesAsync();
             return View(deviceTypes);
         }
+
+        [RequirePermission(Permission.AddDevices)]
+        public async Task<ActionResult> AddBulkDevice()
+        {
+            var deviceTypes = await _deviceTypeLogic.GetAllDeviceTypesAsync();
+            return View(deviceTypes);
+        }
+
+        [RequirePermission(Permission.AddDevices)]
+        public async Task<ActionResult> AddBulkDevicesCreated(List<string> deviceList)
+        {
+            return View(deviceList);
+        }
+
+        [HttpPost]
+        [RequirePermission(Permission.AddDevices)]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> FileUpload(HttpPostedFileBase file)
+        {
+            file = Request.Files[0];
+            var serializedDevices = new List<string>();
+            //List<String> DeviceList = new List<String>();
+            StringBuilder strBuilder = new StringBuilder();
+
+            if (file != null && file.ContentLength > 0)
+            {
+                StreamReader csvreader = new StreamReader(file.InputStream);
+                
+                while (!csvreader.EndOfStream)
+                {
+                    var deviceId = csvreader.ReadLine();
+                    //var values = line.Split(',');
+                    Device device;
+
+                    try
+                    {
+                        var d = new Device(deviceId);
+                        device = await _deviceManager.AddDeviceAsync(d);
+                        strBuilder.AppendLine(deviceId + ", " + device.Authentication.SymmetricKey.PrimaryKey);
+                        //DeviceList.Add(deviceId + ", " + device.Authentication.SymmetricKey.PrimaryKey);
+                    }
+                    catch (Exception exception)
+                    {
+                        strBuilder.AppendLine(deviceId + ", " + "Could not be created: " + exception.Message).Append("\n\r");
+                        //DeviceList.Add(deviceId + ", " + "Could not be created: " + exception.Message);
+                    }
+                }
+            }
+            else
+            {
+                return View("AddBulkDevice");
+            }
+
+            return File(new System.Text.UTF8Encoding().GetBytes(strBuilder.ToString()), "text/csv", "devices.csv");
+            //return View("AddBulkDevicesCreated", DeviceList);
+        }
+
 
         [RequirePermission(Permission.AddDevices)]
         public async Task<ActionResult> SelectType(DeviceType deviceType)

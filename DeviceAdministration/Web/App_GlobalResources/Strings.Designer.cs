@@ -134,6 +134,15 @@ namespace GlobalResources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bulk Add Devices.
+        /// </summary>
+        public static string AddBulkDevice {
+            get {
+                return ResourceManager.GetString("AddBulkDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Desired Property.
         /// </summary>
         public static string AddDesiredProperty {
@@ -1304,7 +1313,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remote Monitoring Solution.
+        ///   Looks up a localized string similar to Wireless Network.
         /// </summary>
         public static string DefaultSolutionName {
             get {
@@ -3509,7 +3518,7 @@ namespace GlobalResources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Microsoft Azure IoT Suite.
+        ///   Looks up a localized string similar to Scientific Games.
         /// </summary>
         public static string MicrosoftAzureIoTSuite {
             get {

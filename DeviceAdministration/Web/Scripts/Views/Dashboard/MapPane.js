@@ -15,6 +15,7 @@
     var getMapKey = function () {
         $.get('/api/v1/telemetry/mapApiKey', {}, function (response) {
             self.mapApiKey = response;
+            self.mapApiKey = "Ag8CzdLclbzW-zdIdSRT4o0_XjW07hMT70FcVtnZbvh8-wsd_B0IGpvuR2sEGEV6";
             startMap();
         });
     }
@@ -31,10 +32,10 @@
             enableSearchLogo: false,
             enableClickableLogo: false
         };
-
+        
         // Initialize the map
         self.map = new Microsoft.Maps.Map(document.getElementById("deviceMap"), options);
-
+        
         // Hide the infobox when the map is moved.
         Microsoft.Maps.Events.addHandler(self.map, 'viewchange', hideInfobox);
     }
@@ -99,7 +100,7 @@
 
         self.map.entities.clear();
         if (deviceLocations) {
-            for (i = 0 ; i < deviceLocations.length; ++i) {
+            for (i = 0; i < deviceLocations.length; ++i) {
                 loc = new Microsoft.Maps.Location(deviceLocations[i].latitude, deviceLocations[i].longitude);
 
                 pinOptions = {

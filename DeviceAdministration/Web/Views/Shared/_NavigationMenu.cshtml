@@ -20,6 +20,11 @@
 
     @if (PermsChecker.HasPermission(Permission.AddDevices))
     {
+        <a class="navigation__link navigation__link--add_bulk" href="@Url.Action("AddBulkDevice", "Device")">@Strings.AddBulkDevice</a>
+    }
+
+    @if (PermsChecker.HasPermission(Permission.AddDevices))
+    {
         <a class="navigation__link navigation__link--add_device" href="@Url.Action("AddDevice", "Device")">@Strings.AddDevice</a>
     }
 </nav>

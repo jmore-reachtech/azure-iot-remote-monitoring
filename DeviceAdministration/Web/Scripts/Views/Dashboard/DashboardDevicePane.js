@@ -108,7 +108,7 @@
                 currentDeviceId = deviceId;
 
                 refreshData();
-                IoTApp.AlertHistoryTable.setSelectedDevice(deviceId);
+                //IoTApp.AlertHistoryTable.setSelectedDevice(deviceId);
             }
         };
 

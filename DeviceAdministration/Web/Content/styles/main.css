@@ -246,6 +246,10 @@ main.main_no_nav {
   background-image: url("/Content/img/icon_add.svg");
   background-size: 20px 20px;
 }
+.navigation__link--add_bulk {
+    background-image: url("/Content/img/icon_add.svg");
+    background-size: 20px 20px;
+}
 .icon-add {
   width: 15px;
   height: 15px;

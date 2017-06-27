@@ -745,6 +745,8 @@
     <Content Include="Views\Job\ScheduleIconUpdate.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Dashboard\_DashboardDevicePane.cshtml" />
+    <Content Include="Views\Device\AddBulkDevice.cshtml" />
+    <Content Include="Views\Device\AddBulkDevicesCreated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
